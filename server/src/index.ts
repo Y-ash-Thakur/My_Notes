@@ -1,10 +1,14 @@
-import http from 'http';
+// import http from 'http';
+import app from './app.js';
 
-const server = http.createServer((req,res) => {
-    res.write("Hello From Backend");
-    res.end();
-})
+const PORT = 5000;
 
-server.listen(5000, () => {
-    console.log("Server is running on port 5000");
+// const server = http.createServer((req,res) => {
+//     res.write("Hello From Backend");
+//     res.end();
+// })
+
+app.listen(5000, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
+
