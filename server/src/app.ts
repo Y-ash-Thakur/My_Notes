@@ -1,14 +1,15 @@
 import express from 'express';
 import healthRoutes from './routes/health.routes.js';
 import notesRouter from './routes/notes.routes.js';
+import { API_PREFIX } from './config/constants.js';
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/api', healthRoutes );
+app.use(API_PREFIX, healthRoutes );
 
-app.use('/api', notesRouter);
+app.use(API_PREFIX, notesRouter);
 
 app.get('/api/about', (req, res) => {
     res.json({
